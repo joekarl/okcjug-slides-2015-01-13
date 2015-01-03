@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Webscale HTTP services with Dropwizard</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <style type="text/css">
+    * {
+      font-family: "Helvetica";
+    }
+
+    .red {
+      color: #FF0000;
+    }
+
+    .large img {
+      width: 100%;
+      height: 100%;
+    }
+
+    li {
+      font-size: 40px;
+      line-height: 50px;
+
+    }
+
+    .smaller ul li {
+    }
+  </style>
+</head>
+<body>
+  <textarea id="source">
+
+    class: center, middle
+
+    # Webscale HTTP services with Dropwizard
+
+    ---
+
+    class: center, middle
+
+    # Karl Kirch
+    ### @joekarl
+    <br />
+    <br />
+    ![Simple](simple-small-applications.png)
+
+    ???
+
+    Who am I?
+
+    Ok, so let's be honest this is really...
+    ---
+
+    class: center, middle
+
+    ## <span class="red">*</span> Another opinionated talk about a framework to build web services
+
+    ---
+
+    class: center, middle
+
+    <span class="large">![Thumbs Down](thumbsdown.gif)</span>
+
+    ---
+
+    class: center, middle
+
+    ##But that's okay!
+    ##New things are shiny and fun!
+
+    ---
+
+    class: center, middle
+
+    # So what is Dropwizard?
+
+    ![Dropwizard logo](dropwizard-hat.png)
+
+    ---
+
+    class: center, middle
+
+    ## Dropwizard is a Java framework for developing ops-friendly, high-performance, RESTful web services.
+    #### - The Dropwizard website
+
+    ---
+
+    class: center, middle
+
+    ### In other words...
+
+    ---
+
+    class: center, middle
+
+    <span class="large">![Yawn](yawn.gif)</span>
+
+    ???
+
+    We're used to this right?
+
+    A Framework promising to solve your problems
+
+    easier better faster
+
+    I mean really, we've seen this a million times before
+
+    So what makes Dropwizard different?
+
+    Nothing.
+
+    ---
+
+    class: center, middle
+
+    ### Dropwizard isn't glamorous, it's designed to help you get things done
+
+    ???
+
+    And not only done, but production ready done
+
+    ---
+
+    # The core ingedients
+
+    * Embedded Jetty
+    * REST via Jersey with JAX-RS annotations
+    * Jackson for JSON
+    * Built in Metrics
+    * Logging via slf4j and Logback
+
+    ???
+
+    Jetty - no container, fast
+
+    Jersey - simple resource definitions next to your code
+
+    Jackson - basically THE json library on the jvm
+
+    Metrics - know what your service is doing, both timing and usage
+
+    Logging - battle tested, fast
+
+    ---
+
+    # Other niceties
+
+    * Guava
+    * Hibernate Validator
+    * JodaTime
+    * Freemarker / Mustache templates
+    * Apache HttpClient
+    * Testable
+
+    ???
+
+    I know that I said that this talk was opinionated,
+    but did I mention that Dropwizard is opinionated too?
+
+    But don't worry, most things are swappable, use what you want
+
+    ---
+
+    # More than an HTTP server
+
+    * Admin interface
+      * Healthchecks
+      * Metrics
+      * Thread dumps
+      * Tasks
+    * Commands
+    * Managed Objects
+    * Environments
+
+    ???
+
+    Admin interface
+
+    Healthchecks - imperative to keep verify your app is up and running
+
+    Metrics - endpoint to see current metric stats
+
+    Thread dumps - get it via http
+
+    Tasks - http accessible routes not exposed to public routes
+
+    Commands - command line commands
+
+    Managed Objects - control startup / shutdown is tricky
+
+    Environments - think setting up different services per environment
+
+    ---
+
+    class: center, middle
+
+    #Let's build something!
+
+    ???
+
+    ie going to show building a cool basic app
+
+    ---
+
+    class: center, middle
+
+    ### Now for the very opinionated part of the talk
+
+    ![Dropwizard wizard](dropwizardcomic_crop.gif)
+
+    ???
+
+
+
+    ---
+
+
+    # Why not J2EE?
+
+    * Do you really need all the features of J2EE?
+    * Classloader problems, Permgen issues
+    * Shared non-isolated resources (CPU, memory)
+    * NOT ops friendly
+    * You don't need a container to run a web server
+
+    ???
+
+    I kid though, J2EE has it's place, but for 95% of the problems out there
+    it's overkill and the overhead (both performance and development wise)
+    just isn't worth it
+
+    These days the game has changed, it's about running one app on a cloud instance
+    and adding more instances instead of beefing up your server
+
+    ---
+
+    # Why Dropwizard?
+
+    * Easy development
+    * Easy deployment
+    * Production ready
+    * Lightweight
+    * Ops ready
+
+    ???
+
+    Easy development - no special setup, most things are pojos, easy to test
+
+    Easy deployment - Build an uber jar, run it, no app server
+
+    Production ready - all the pieces you need to feel good about running in production
+
+    Lightweight - a lot of the hype around nodejs and other languages is that
+    they're lightweight and fast
+
+    Ops ready - everything operations needs to keep your app running is built in
+    don't have an ops team? then it's all the things YOU need to keep your app running
+
+    ---
+
+    class: center, middle
+
+    # Questions?
+
+  </textarea>
+  <script src="remark-latest.min.js">
+  </script>
+  <script>
+  var slideshow = remark.create();
+  </script>
+</body>
+</html>
